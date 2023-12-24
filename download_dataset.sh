@@ -1,6 +1,6 @@
 FILE=$1
-if [[ $FILE != "raw"  ]]; then
-    echo "Available datasets are:raw "
+if [[ $FILE != "charades"  ]]; then
+    echo "Available datasets are:charades "
     exit 1
 fi
 if [[ $FILE == "cityscapes" ]]; then
@@ -9,11 +9,11 @@ if [[ $FILE == "cityscapes" ]]; then
     exit 1
 fi
 echo "Specified [$FILE]"
-URL=https://syncandshare.lrz.de/dl/fiA6KKF6AAzux7Pw2ANnBnLf/$FILE.zip
-ZIP_FILE=./data/vessel_data/$FILE.zip
-TARGET_DIR=./data/vessel_data/$FILE/
+URL=https://ai2-public-datasets.s3-us-west-2.amazonaws.com/charades/$FILE.zip
+ZIP_FILE=./dataset/ag/video/$FILE.zip
+TARGET_DIR=./dataset/ag/video/$FILE/
 wget -N $URL -O $ZIP_FILE
 mkdir $TARGET_DIR
-unzip $ZIP_FILE -d ./data/vessel_data/
+unzip $ZIP_FILE -d ./dataset/ag/video/
 rm $ZIP_FILE
 
