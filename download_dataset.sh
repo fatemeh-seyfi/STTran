@@ -10,10 +10,10 @@ if [[ $FILE == "cityscapes" ]]; then
 fi
 echo "Specified [$FILE]"
 URL=https://ai2-public-datasets.s3-us-west-2.amazonaws.com/$FILE.zip
-ZIP_FILE=./dataset/ag/video/$FILE.zip
-TARGET_DIR=./dataset/ag/video/$FILE/
+ZIP_FILE=./dataset/ag/videos/$FILE.zip
+TARGET_DIR=./dataset/ag/videos/$FILE/
 wget -N $URL -O $ZIP_FILE
 mkdir $TARGET_DIR
-unzip $ZIP_FILE -d ./dataset/ag/video/
+unzip $ZIP_FILE -d ./dataset/ag/videos/
 rm $ZIP_FILE
 
